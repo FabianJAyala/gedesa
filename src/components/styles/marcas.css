@@ -1,0 +1,47 @@
+.marcas-cont {
+    background-color: #f2f4fa;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.marcas-cont .swiper {
+    width: 100%;
+    height: 100%;
+    margin-top: 3%;
+    z-index: 0;
+}
+
+.marcas-cont .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.marcas-cont .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.marcas-cont .swiper-pagination {
+    display: none;
+}
+
+@media (max-width: 991.67px) {
+    .marcas-cont {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
+
+@media (max-width: 767.20px) {
+    .marcas-cont {
+        padding-left: 2%;
+        padding-right: 2%;
+    }
+}

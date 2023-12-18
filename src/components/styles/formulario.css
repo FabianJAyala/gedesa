@@ -1,0 +1,25 @@
+.imagen-cont {
+    padding: 2% 2% 2% 0%;
+}
+
+.form-image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.form-template-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .form-template-cont {
+        padding: 5% 5% 5% 5%;
+    }
+    .imagen-cont {
+        display: none;
+    }
+}

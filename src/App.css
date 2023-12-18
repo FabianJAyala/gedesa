@@ -1,38 +1,33 @@
-.App {
-  text-align: center;
+/* CSS - Brand Gedesa */
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans&family=Yeseva+One&display=swap');
+
+h1, h2 {
+  font-family: 'Yeseva One', serif;
+  color: #212124;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h3, h4, p {
+  font-family: 'Work Sans', sans-serif;
+  color: #212124;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1 {
+  font-size: 48px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+h2 {
+  font-size: 32px;
 }
 
-.App-link {
-  color: #61dafb;
+h3 {
+  font-size: 26px;
+  font-weight: 400;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h4 {
+  font-size: 20px;
+}
+
+p {
+  font-size: 16px;
 }

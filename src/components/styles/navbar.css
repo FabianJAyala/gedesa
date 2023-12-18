@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans&family=Yeseva+One&display=swap');
+
+.navbar-header {
+    font-weight: 800;
+    background-color: #f2f4fa;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.nav-link {
+    color: #212124;
+    font-family: 'Work Sans', serif;
+}
+
+#contact-btn {
+    font-family: 'Work Sans', serif;
+    --bs-btn-bg: #d4453e;
+    --bs-btn-border-color: #dc3545;
+    --bs-btn-active-border-color: #d4453e;
+    --bs-btn-disabled-bg: #d4453e;
+    --bs-btn-disabled-border-color: #d4453e;
+}
+
+@media (max-width: 992px) {
+    .navbar-collapse {
+        margin-top: 3%;
+        margin-bottom: 3%;
+    }
+    .opciones-nav {
+        display: flex;
+        text-align: center;
+    }
+    .contacto-div {
+        display: flex;
+        justify-content: center;
+    }
+}

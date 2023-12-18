@@ -1,0 +1,16 @@
+.principios-cont {
+    background-color: #f2f4fa;
+    padding: 5% 25% 5% 25%;
+}
+
+@media (max-width: 1200px) {
+    .principios-cont {
+        padding: 5% 15% 5% 15%;
+    }
+}
+
+@media (max-width: 767.20px) {
+    .principios-cont {
+        padding: 5% 10% 5% 10%;
+    }
+}

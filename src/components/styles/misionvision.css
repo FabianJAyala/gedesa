@@ -1,0 +1,18 @@
+.misionvision-cont {
+    padding-left: 20%;
+    padding-right: 25%;
+}
+
+@media (max-width: 1200px) {
+    .misionvision-cont {
+        padding-left: 5%;
+        padding-right: 20%;
+    }
+}
+
+@media (max-width: 768px) {
+    .misionvision-cont {
+        padding-left: 0%;
+        padding-right: 5%;
+    }
+}
