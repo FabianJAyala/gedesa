@@ -1,0 +1,14 @@
+#send-form-btn{
+    font-family: 'Work Sans', serif;
+    --bs-btn-bg: #d4453e;
+    --bs-btn-border-color: #dc3545;
+    --bs-btn-active-border-color: #d4453e;
+    --bs-btn-disabled-bg: #d4453e;
+    --bs-btn-disabled-border-color: #d4453e;
+}
+
+@media (max-width: 768px) {
+    .form-mobile {
+        margin-bottom: 5%;
+    }
+}
