@@ -1,91 +1,48 @@
 import React, { useEffect } from 'react';
 
-const centerCords = {
-  lat: -19.0477332,
-  lng: -65.2587783
-};
+import business from "../images/gedesa-favicon.ico"
+import './styles/map.css';
 
-const markersOnMap = [
-  {
-    placeName: "Tienda Best - Sucre",
-    LatLng: [
-      {
-        lat: -19.0477332,
-        lng: -65.2587783
-      }
-    ],
-    content: '<strong>Lunes a viernes:</strong><br/><br/>09:00 a 13:00 y 15:00 a 19:00<br/><br/><strong>Sábado:</strong><br/> 09:00 a 13:00'
-  },
-];
-
-const addMarkerInfo = () => {
-  for (let i = 0; i < markersOnMap.length; i++) {
-    const contentString = '<div id="content"><h3>' + markersOnMap[i].placeName +
-      '</h3><p>' + markersOnMap[i].content + '</p></div>';
-
-    const marker = new window.google.maps.Marker({
-      position: markersOnMap[i].LatLng[0],
-      map: window.map,
-      icon: 'https://www.best.com.bo/wp-content/uploads/2023/06/favicon-logo-best-2023-100x100-1-e1685650420388.jpg',
-    });
-
-    const infowindow = new window.google.maps.InfoWindow({
-      content: contentString,
-      maxWidth: 200
-    });
-
-    marker.addListener('click', () => {
-      closeOtherInfo();
-      infowindow.open(marker.get('map'), marker);
-      window.InforObj[0] = infowindow;
-    });
-  }
-};
-
-const closeOtherInfo = () => {
-  if (window.InforObj.length > 0) {
-    window.InforObj[0].set("marker", null);
-    window.InforObj[0].close();
-    window.InforObj.length = 0;
-  }
-};
-
-const initMap = () => {
-  window.map = new window.google.maps.Map(document.getElementById('map'), {
-    zoom: 14,
-    center: centerCords
-  });
-  addMarkerInfo();
-};
-
-const MapComponent = () => {
+const Map = () => {
   useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://maps.google.com/maps/api/js?key=AIzaSyCZEsY97Ye1D1Q3zdpEVKdTCbCGlp6-FRo';
-    script.async = true;
-    script.defer = true;
-    script.onload = initMap;
-
-    document.body.appendChild(script);
-
-    return () => {
-      document.body.removeChild(script);
+    const mapOptions = {
+      center: { lat: -16.545278, lng: -68.089022 },
+      zoom: 16,
     };
+    const map = new window.google.maps.Map(document.getElementById('map'), mapOptions);
+
+    const businessPositions = [
+      { lat: -16.545278, lng: -68.089022 },
+    ];
+
+    const businessIcon = {
+      url: business,
+      scaledSize: new window.google.maps.Size(40, 40),
+    };
+
+    businessPositions.forEach((position) => {
+      const marker = new window.google.maps.Marker({
+        position,
+        map,
+        icon: businessIcon,
+      });
+      const tooltipContent = '<h6>Gedesa Costanera 1000</h6></br><strong>Horarios de Atención</strong></br>Lunes a Viernes de 8:30 a 17:00</br>Sábado de 9:00 a 12:30';
+      const infoWindow = new window.google.maps.InfoWindow({
+        content: tooltipContent,
+      });
+
+      marker.addListener('mouseover', () => {
+        infoWindow.open(map, marker);
+      });
+
+      marker.addListener('mouseout', () => {
+        infoWindow.close();
+      });
+    });
+
   }, []);
 
-  return (
-    <div>
-      <style>
-        {`
-          #map {
-            height: 500px;
-            width: 100%;
-          }
-        `}
-      </style>
-      <div id="map"></div>
-    </div>
-  );
+  return <div id="map"></div>;
 };
 
-export default MapComponent;
+export default Map;
